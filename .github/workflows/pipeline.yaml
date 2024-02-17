@@ -42,6 +42,12 @@ jobs:
       - name: Set up terraform
         uses: hashicorp/setup-terraform@v3
 
+      - name: Setting Terraform Variables
+        run: |
+          export TF_VAR_client_id=${{ secrets.AZURE_CLIENT_ID }}
+          export TF_VAR_tenant_id=${{ secrets.AZURE_TENANT_ID }}
+          export TF_VAR_sub_id=${{ secrets.AZURE_SUBSCRIPTION_ID }}
+          
       - name: Terraform Init
         run: terraform init
 
@@ -53,7 +59,7 @@ jobs:
 
       - name: Terraform Apply
         if: github.event.inputs.actions == 'apply' || github.event_name == 'push'
-        run: terraform apply -auto-approve -input=false
+        run: terraform apply -auto-approve
 
       - name: Terraform Destroy
         if: github.event.inputs.actions == 'destroy'

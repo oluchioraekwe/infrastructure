@@ -18,4 +18,7 @@ provider "azurerm" {
   use_oidc = true
   # Configuration options
   features {}
+  client_id = var.client_id
+  tenant_id = var.tenant_id
+  subscription_id = var.sub_id
 }
