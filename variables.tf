@@ -113,17 +113,17 @@ variable "source-image-version" {
   description = "Specifies the version of the image used to create the virtual machines. Changing this forces a new resource to be created."
 }
 
-variable "client_id" {
-  type        = string
-  description = "The Client ID for the Azure Subscription"
-}
+# variable "client_id" {
+#   type        = string
+#   description = "The Client ID for the Azure Subscription"
+# }
 
-variable "tenant_id" {
-  type        = string
-  description = "The Tennant ID for the Azure Subscription"
-}
+# variable "tenant_id" {
+#   type        = string
+#   description = "The Tennant ID for the Azure Subscription"
+# }
 
-variable "sub_id" {
-  type        = string
-  description = "The Subscription ID for the Azure Account"
-}
+# variable "sub_id" {
+#   type        = string
+#   description = "The Subscription ID for the Azure Account"
+# }
