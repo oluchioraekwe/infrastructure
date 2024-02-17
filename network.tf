@@ -4,6 +4,7 @@ resource "azurerm_virtual_network" "vmnetwork" {
   resource_group_name = azurerm_resource_group.main.name
   address_space       = var.vnet-cidr
   tags                = var.tag
+  depends_on = [ azurerm_resource_group.main ]
 }
 
 resource "azurerm_subnet" "vm-sub" {
