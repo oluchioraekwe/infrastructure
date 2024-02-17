@@ -3,7 +3,7 @@ resource "azurerm_virtual_network" "vmnetwork" {
   location            = var.vnet-location
   resource_group_name = azurerm_resource_group.main.name
   address_space       = var.vnet-cidr
-  tags = var.tag
+  tags                = var.tag
 }
 
 resource "azurerm_subnet" "vm-sub" {

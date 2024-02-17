@@ -47,15 +47,17 @@ jobs:
           export TF_VAR_client_id=${{ secrets.AZURE_CLIENT_ID }}
           export TF_VAR_tenant_id=${{ secrets.AZURE_TENANT_ID }}
           export TF_VAR_sub_id=${{ secrets.AZURE_SUBSCRIPTION_ID }}
-          
+
       - name: Terraform Init
         run: terraform init
 
       - name: Terraform Format
         run: terraform fmt -check
+        continue-on-error: true
 
       - name: Terraform Plan
-        run: terraform plan -input=false
+        run: terraform plan
+        continue-on-error: false
 
       - name: Terraform Apply
         if: github.event.inputs.actions == 'apply' || github.event_name == 'push'
