@@ -8,7 +8,7 @@ resource "azurerm_virtual_network" "vmnetwork" {
 }
 
 resource "azurerm_subnet" "vm-sub" {
-  name                 = 55678
+  name                 = var.subnet-name
   resource_group_name  = azurerm_resource_group.main.name
   virtual_network_name = azurerm_virtual_network.vmnetwork.name
   address_prefixes     = var.subnet-cidr
