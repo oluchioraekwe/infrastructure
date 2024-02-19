@@ -49,7 +49,7 @@ No modules.
 | <a name="input_nic-location"></a> [nic-location](#input\_nic-location) | The location where the Network Interface should exist. Changing this forces a new resource to be created. | `string` | n/a | yes |
 | <a name="input_nic-name"></a> [nic-name](#input\_nic-name) | The name of the Network Interface. Changing this forces a new resource to be created. | `string` | n/a | yes |
 | <a name="input_password"></a> [password](#input\_password) | The Password which should be used for the local-administrator on this Virtual Machine. Changing this forces a new resource to be created. | `string` | n/a | yes |
-| <a name="input_password-auth"></a> [password-auth](#input\_password-auth) | n/a | `bool` | `false` | no |
+| <a name="input_password-auth"></a> [password-auth](#input\_password-auth) | To set is password will be required for the authentication or not | `bool` | `false` | no |
 | <a name="input_rg_location"></a> [rg\_location](#input\_rg\_location) | The Azure Region where the Resource Group should exist. Changing this forces a new Resource Group to be created | `string` | n/a | yes |
 | <a name="input_rg_name"></a> [rg\_name](#input\_rg\_name) | The Name which should be used for this Resource Group. Changing this forces a new Resource Group to be created. | `string` | n/a | yes |
 | <a name="input_source-image-offer"></a> [source-image-offer](#input\_source-image-offer) | Specifies the offer of the image used to create the virtual machines. Changing this forces a new resource to be created. | `string` | n/a | yes |

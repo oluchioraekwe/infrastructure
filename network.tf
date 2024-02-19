@@ -11,7 +11,7 @@ resource "azurerm_subnet" "vm-sub" {
   name                 = var.subnet-name
   resource_group_name  = azurerm_resource_group.main.name
   virtual_network_name = azurerm_virtual_network.vmnetwork.name
-  address_prefixes     = var.subnet-cidr
+  address_prefixes     = var.vnet-cidr
 }
 
 resource "azurerm_network_interface" "vm-nic" {

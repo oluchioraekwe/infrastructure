@@ -79,8 +79,9 @@ variable "password" {
 }
 
 variable "password-auth" {
-  type    = bool
-  default = false
+  type        = bool
+  description = "To set is password will be required for the authentication or not"
+  default     = false
 }
 
 variable "disk-cache" {
