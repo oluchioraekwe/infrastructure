@@ -1,4 +1,4 @@
-rg_name       = "compute"
+rg_name       = "rg"
 rg_location   = "West Europe"
 vnet-name     = "vm"
 vnet-location = "West Europe"

@@ -1,4 +1,7 @@
+resource "random_pet" "rg_name" {
+  prefix = var.rg_name
+}
 resource "azurerm_resource_group" "main" {
-  name     = "${var.rg_name}-rg"
+  name     = random_pet.rg_name.id
   location = var.rg_location
 }
