@@ -73,4 +73,4 @@ jobs:
         if: github.event.inputs.actions == 'destroy'
         run: |
           terraform plan -destroy -out main.destroy.tfplan
-          terraform destroy main.destroy.tfplan
+          terraform apply main.destroy.tfplan
