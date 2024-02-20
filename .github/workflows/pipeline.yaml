@@ -37,7 +37,7 @@ jobs:
           subscription-id: ${{ secrets.AZURE_SUBSCRIPTION_ID }}
 
       - name: Check out to repo
-        uses: actions/checkout@v2
+        uses: actions/checkout@v4
 
       - name: Set up terraform
         uses: hashicorp/setup-terraform@v3

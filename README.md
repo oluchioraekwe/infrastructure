@@ -20,7 +20,9 @@ This is a repository for deploying resources to azure cloud using Terraform
 
 ## Modules
 
-No modules.
+| Name | Source | Version |
+|------|--------|---------|
+| <a name="module_security-group"></a> [security-group](#module\_security-group) | ./modules | n/a |
 
 ## Resources
 
@@ -30,8 +32,10 @@ No modules.
 | [azapi_resource_action.ssh_public_key_gen](https://registry.terraform.io/providers/azure/azapi/1.5/docs/resources/resource_action) | resource |
 | [azurerm_linux_virtual_machine.vm1](https://registry.terraform.io/providers/hashicorp/azurerm/3.75.0/docs/resources/linux_virtual_machine) | resource |
 | [azurerm_network_interface.vm-nic](https://registry.terraform.io/providers/hashicorp/azurerm/3.75.0/docs/resources/network_interface) | resource |
+| [azurerm_public_ip.vmpublicIp](https://registry.terraform.io/providers/hashicorp/azurerm/3.75.0/docs/resources/public_ip) | resource |
 | [azurerm_resource_group.main](https://registry.terraform.io/providers/hashicorp/azurerm/3.75.0/docs/resources/resource_group) | resource |
 | [azurerm_subnet.vm-sub](https://registry.terraform.io/providers/hashicorp/azurerm/3.75.0/docs/resources/subnet) | resource |
+| [azurerm_subnet_network_security_group_association.sg-subnet](https://registry.terraform.io/providers/hashicorp/azurerm/3.75.0/docs/resources/subnet_network_security_group_association) | resource |
 | [azurerm_virtual_network.vmnetwork](https://registry.terraform.io/providers/hashicorp/azurerm/3.75.0/docs/resources/virtual_network) | resource |
 | [random_pet.rg_name](https://registry.terraform.io/providers/hashicorp/random/3.0/docs/resources/pet) | resource |
 | [random_pet.ssh_key_name](https://registry.terraform.io/providers/hashicorp/random/3.0/docs/resources/pet) | resource |
@@ -50,8 +54,11 @@ No modules.
 | <a name="input_nic-name"></a> [nic-name](#input\_nic-name) | The name of the Network Interface. Changing this forces a new resource to be created. | `string` | n/a | yes |
 | <a name="input_password"></a> [password](#input\_password) | The Password which should be used for the local-administrator on this Virtual Machine. Changing this forces a new resource to be created. | `string` | n/a | yes |
 | <a name="input_password-auth"></a> [password-auth](#input\_password-auth) | To set is password will be required for the authentication or not | `bool` | `false` | no |
+| <a name="input_public_ip_allocation"></a> [public\_ip\_allocation](#input\_public\_ip\_allocation) | Defines the allocation method for this IP address. Possible values are Static or Dynamic. | `string` | n/a | yes |
+| <a name="input_public_ip_name"></a> [public\_ip\_name](#input\_public\_ip\_name) | Specifies the name of the Public IP. Changing this forces a new Public IP to be created. | `string` | n/a | yes |
 | <a name="input_rg_location"></a> [rg\_location](#input\_rg\_location) | The Azure Region where the Resource Group should exist. Changing this forces a new Resource Group to be created | `string` | n/a | yes |
 | <a name="input_rg_name"></a> [rg\_name](#input\_rg\_name) | The Name which should be used for this Resource Group. Changing this forces a new Resource Group to be created. | `string` | n/a | yes |
+| <a name="input_sg-name"></a> [sg-name](#input\_sg-name) | Specifies the name of the network security group. Changing this forces a new resource to be created. | `string` | n/a | yes |
 | <a name="input_source-image-offer"></a> [source-image-offer](#input\_source-image-offer) | Specifies the offer of the image used to create the virtual machines. Changing this forces a new resource to be created. | `string` | n/a | yes |
 | <a name="input_source-image-publisher"></a> [source-image-publisher](#input\_source-image-publisher) | Specifies the publisher of the image used to create the virtual machines. Changing this forces a new resource to be created. | `string` | n/a | yes |
 | <a name="input_source-image-sku"></a> [source-image-sku](#input\_source-image-sku) | Specifies the SKU of the image used to create the virtual machines. Changing this forces a new resource to be created. | `string` | n/a | yes |
@@ -70,4 +77,5 @@ No modules.
 |------|-------------|
 | <a name="output_key_data"></a> [key\_data](#output\_key\_data) | The value of the rsa key for the linux vm |
 | <a name="output_vm-Ip"></a> [vm-Ip](#output\_vm-Ip) | The value of the private Ip address of the linux virtual machine |
+| <a name="output_vm-Ip_public"></a> [vm-Ip\_public](#output\_vm-Ip\_public) | The public ip address of the virtual machine |
 <!-- END_TF_DOCS -->

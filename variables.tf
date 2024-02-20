@@ -128,3 +128,18 @@ variable "source-image-version" {
 #   type        = string
 #   description = "The Subscription ID for the Azure Account"
 # }
+
+variable "public_ip_name" {
+  type        = string
+  description = "Specifies the name of the Public IP. Changing this forces a new Public IP to be created."
+}
+
+variable "public_ip_allocation" {
+  type        = string
+  description = " Defines the allocation method for this IP address. Possible values are Static or Dynamic."
+}
+
+variable "sg-name" {
+  type        = string
+  description = "Specifies the name of the network security group. Changing this forces a new resource to be created."
+}
