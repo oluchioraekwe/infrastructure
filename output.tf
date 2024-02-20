@@ -6,6 +6,7 @@ output "vm-Ip" {
 output "key_data" {
   value       = jsondecode(azapi_resource_action.ssh_public_key_gen.output).privateKey
   description = "The value of the rsa key for the linux vm"
+  sensitive   = true
 }
 
 output "vm-Ip_public" {
