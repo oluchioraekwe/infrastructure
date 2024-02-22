@@ -51,18 +51,6 @@ jobs:
       - name: Terraform Init
         run: terraform init
 
-      # - name: Terraform Validate
-      #   run: terraform validate
-      #   continue-on-error: false
-
-      # - name: Terraform Format
-      #   run: terraform fmt
-      #   continue-on-error: true
-
-      # - name: Terraform Plan
-      #   run: terraform plan
-      #   continue-on-error: false
-
       - name: Terraform Apply
         if: github.event.inputs.actions == 'apply' || github.event_name == 'push'
         run: |

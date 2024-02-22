@@ -12,10 +12,11 @@ resource "azurerm_subnet" "vm-sub" {
   resource_group_name  = azurerm_resource_group.main.name
   virtual_network_name = azurerm_virtual_network.vmnetwork.name
   address_prefixes     = var.vnet-cidr
+  service_endpoints    = var.subnet-service-endpoint
 }
 
 resource "azurerm_network_interface" "vm-nic" {
-  name                = "${var.nic-name}-nic"
+  name                = "${var.linux-nic-name}-nic"
   location            = var.nic-location
   resource_group_name = azurerm_resource_group.main.name
 
@@ -24,6 +25,20 @@ resource "azurerm_network_interface" "vm-nic" {
     subnet_id                     = azurerm_subnet.vm-sub.id
     private_ip_address_allocation = var.nic-ip-allocation
     public_ip_address_id          = azurerm_public_ip.vmpublicIp.id
+
+  }
+}
+
+resource "azurerm_network_interface" "window-vm" {
+  name                = "${var.window-nic-name}-nic"
+  location            = azurerm_resource_group.main.location
+  resource_group_name = azurerm_resource_group.main.name
+
+  ip_configuration {
+    name                          = var.nic-ip-config-name
+    subnet_id                     = azurerm_subnet.vm-sub.id
+    private_ip_address_allocation = var.nic-ip-allocation
+    # public_ip_address_id          = azurerm_public_ip.vmpublicIp.id
   }
 }
 

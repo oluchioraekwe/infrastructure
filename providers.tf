@@ -8,10 +8,11 @@ terraform {
       source  = "hashicorp/random"
       version = "3.0"
     }
-    azapi = {
-      source  = "azure/azapi"
-      version = "1.5"
+    time = {
+      source  = "hashicorp/time"
+      version = "0.10.0"
     }
+
   }
   backend "azurerm" {
     resource_group_name  = "storage"
